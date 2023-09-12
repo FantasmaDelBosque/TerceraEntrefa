@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Discos</h1>
-</body>
-</html>
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+<h1>Discos</h1>
+
+<h1>Agregar Disco</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.titulo.label_tag }} {{ form.titulo }}
+    {{ form.año_lanzamiento.label_tag }} {{ form.año_lanzamiento }}
+    {{ form.portada.label_tag }} {{ form.portada }}
+    {{ form.url_compra.label_tag }} {{ form.url_compra }}
+    <button type="submit">Guardar</button>
+</form>
+
+{% endblock contenidoQueCambia %}

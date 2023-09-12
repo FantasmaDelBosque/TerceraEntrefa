@@ -1,0 +1,29 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+    <div class="contenido">
+
+        <form action="{% url 'agregarEvento' %}" method="post">{% csrf_token %}
+            
+            <label for="id_fecha">Fecha:</label>
+            <input type="date" id="id_fecha" name="fecha" required><br>
+    
+            <label for="id_lugar">Lugar:</label>
+            <input type="text" id="id_lugar" name="lugar" maxlength="100" required><br>
+    
+            <label for="id_pais">País:</label>
+            <input type="text" id="id_pais" name="pais" maxlength="50" required><br>
+    
+            <label for="id_estado">Estado:</label>
+            <input type="text" id="id_estado" name="estado" maxlength="50" required><br>
+    
+            <label for="id_boton_compra">Botón de Compra (URL):</label>
+            <input type="url" id="id_boton_compra" name="boton_compra" maxlength="200"><br>
+    
+            <button type="submit">Guardar</button>
+        </form>
+
+    </div>
+
+{% endblock contenidoQueCambia %}
