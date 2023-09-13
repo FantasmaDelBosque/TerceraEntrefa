@@ -3,7 +3,7 @@
 {% block contenidoQueCambia %}
 
     <diV class="contenido">
-        <h1 class="titulo">Eventos</h1>
+        <h1 class="titulo">Todos los Conciertos</h1>
         <ul>
             {% for evento in eventos %}
                 <li>{{ evento.fecha }} - {{ evento.lugar }}  - {{ evento.pais }}  - {{ evento.estado }}</li>

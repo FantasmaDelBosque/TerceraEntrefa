@@ -4,12 +4,6 @@ from .models import Evento, Discos
 from .forms import EventoForm, DiscosForm
 
 
-
-
-
-
-
-
 # from django.views.generic import ListView
 # from django.views.generic.detail import DetailView
 # from django.views.generic.edit import DeleteView, UpdateView, CreateView
@@ -136,3 +130,5 @@ def agregarDisco(req):
         form = DiscosForm() # pylint: disable=no-member
     
     return render(req, 'agregarDisco.html', {'form': form})
+
+
