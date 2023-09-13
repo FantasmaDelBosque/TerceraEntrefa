@@ -3,6 +3,10 @@
 {% block contenidoQueCambia %}
 
     <div class="contenido">
+        <h1 class="titulo">Eventos</h1>
+        <h2 class="subtitulo">Agregar nueva fecha</h2>
+        <br>
+
 
         <form action="{% url 'agregarEvento' %}" method="post">{% csrf_token %}
             

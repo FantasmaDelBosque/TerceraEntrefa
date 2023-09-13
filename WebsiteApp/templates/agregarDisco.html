@@ -1,0 +1,33 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+    <div class="contenido">
+        <h1 class="titulo">Discografias</h1>
+        <h2 class="subtitulo">Agregar Disco</h2>
+
+        <br>
+
+        <form action="{% url 'agregarDisco' %}" method="post" enctype="multipart/form-data">{% csrf_token %}          
+            <legend>Información del Disco</legend>
+           
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="lugar" maxlength="100" required placeholder="Ingrese el título del disco">
+    
+            <label for="anio">Año:</label>
+            <input type="text" id="anio" name="pais" maxlength="50" required placeholder="Ingrese el año de lanzamiento">
+    
+            <label for="imagen">Imagen:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*">
+    
+            <label for="boton_compra">Botón de Compra (URL):</label>
+            <input type="url" id="boton_compra" name="boton_compra" maxlength="200" placeholder="Ingrese la URL de compra (opcional)">
+        
+            <button type="submit">Guardar</button>
+        </form>
+        
+
+    </div>
+
+{% endblock contenidoQueCambia %}
+

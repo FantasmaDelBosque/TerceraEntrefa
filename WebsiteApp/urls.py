@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import  inicio, eventos, discografia, biografia, shop
-from . import views
+from . import views 
 
 
 
@@ -13,4 +13,6 @@ urlpatterns = [
     # Formularios
     path('agregarEvento/',views.agregarEvento, name='agregarEvento'),
     path('lista_eventos/',views.lista_eventos, name='lista_eventos'),
+    path('agregarDisco/',views.agregarDisco, name='agregarDisco'),
+    path('lista_disco/',views.lista_disco, name='lista_disco'),
 ]

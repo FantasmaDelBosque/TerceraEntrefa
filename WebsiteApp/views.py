@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpRequest
-from .forms import EventoForm
-from .models import Evento
+from .models import Evento, Discos
+from .forms import EventoForm, DiscosForm
+
+
+
 
 
 
@@ -47,6 +50,10 @@ def shop(req):
 def lista_eventos(request):
     eventos = Evento.objects.all()  # pylint: disable=no-member
     return render(request, 'lista_eventos.html', {'eventos': eventos})
+
+def lista_disco(request):
+    disco = Evento.objects.all()  # pylint: disable=no-member
+    return render(request, 'lista_disco.html', {'disco': disco})
 
 # forms
 
@@ -113,6 +120,19 @@ def agregarEvento(req):
             return redirect('lista_eventos') 
     else:
         # Si la solicitud no es POST, muestra el formulario en blanco
-        form = EventoForm() 
+        form = EventoForm() # pylint: disable=no-member
     
     return render(req, 'agregarEvento.html', {'form': form})
+
+
+
+def agregarDisco(req):
+    if req.method == 'POST':
+        form = DiscosForm(req.POST, req.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_disco')
+    else:
+        form = DiscosForm() # pylint: disable=no-member
+    
+    return render(req, 'agregarDisco.html', {'form': form})
