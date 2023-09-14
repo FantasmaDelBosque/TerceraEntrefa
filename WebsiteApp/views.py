@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpRequest
-from .models import Evento, Discos
-from .forms import EventoForm, DiscosForm
+from .models import Evento, Discos, Shop
+from .forms import EventoForm, DiscosForm, ShopForm
+
 
 
 # from django.views.generic import ListView
@@ -132,3 +133,15 @@ def agregarDisco(req):
     return render(req, 'agregarDisco.html', {'form': form})
 
 
+
+
+# def crear_producto(request):
+#     if req.method == 'POST':
+#         form = ShopForm(req.POST, req.FILES)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('lista_productos')  
+#     else:
+#         form = ShopForm() 
+    
+#     return render(request, 'crear_producto.html', {'form': form})

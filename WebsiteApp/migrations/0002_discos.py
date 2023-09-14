@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titulo', models.CharField(max_length=100)),
-                ('año_lanzamiento', models.PositiveIntegerField()),
+                ('year_lanzamientoo', models.PositiveIntegerField()),
                 ('portada', models.ImageField(blank=True, null=True, upload_to='discos/')),
                 ('url_compra', models.URLField(blank=True)),
             ],

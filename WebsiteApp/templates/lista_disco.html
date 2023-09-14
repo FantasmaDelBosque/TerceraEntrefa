@@ -6,7 +6,7 @@
         <h1 class="titulo">Toda la Discografia</h1>
             <ul>
                 {% for disco in discos %}
-                    <li>{{ discos.titulo }} - {{ discos.año_lanzamiento }} - {{ discos.portada }}</li>
+                    <li>{{ discos.titulo }} - {{ discos.year_lanzamiento }} - {{ discos.portada }}</li>
                     <li><a href="{{ evento.boton_compra }}" class="buttonCustom" target="_blank">Comprar boleto</a></li>                    
                 {% endfor %}  
             </ul>
